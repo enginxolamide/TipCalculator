@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-size: 1.5rem;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  background-color: var(--Light-grayish-cyan);
+}
+
+.mainContainer {
+  background-color: var(--White);
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 30px;
+  transition:1000ms;
+}
+@media screen and (max-width: 730px) {
+  .mainContainer {
+    flex-wrap: wrap;
+    max-width: 350px;
+  }
+}
+/* display */
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  color: var(--Grayish-cyan);
+  min-width: 300px;
+  height: 300px;
+  margin: 8px;
+  border-radius: 15px;
+  background-color: var(--Very-dark-cyan);
+}
+
+.display .display-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.display .wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--White);
+}
+
+.display .units {
+  font-size: 12px;
+}
+
+.display .amount {
+  font-size: 33px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.display button {
+  padding: 8px;
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: 2px;
+  border: none;
+  color: var(--Very-dark-cyan);
+  font-weight: 600;
+}
+
+.display button.disabled {
+  background-color: var(--Dark-grayish-cyan);
+}
+
+
+/* From */
+.form-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px;
+  color: var(--Grayish-cyan);
+  max-width: 300px;
+  min-width: 200px;
+  margin: 8px;
+  border-radius: 15px;
+  /* border: 2px solid green; */
+  height: 300px;
+}
+
+.form-display input {
+  background-color: var(--Very-light-grayish-cyan);
+  border: none;
+  font-size: 24px;
+  padding: 4px;
+  text-align: right;
+  width: 100%;
+  }
+  input:hover{
+    filter: drop-shadow(0px 0px 1px var(--Very-dark-cyan));
+  }
+.form-display #tip-custom {
+  color: var(--Very-dark-cyan);
+  background-color: none;
+  /* var(--Very-light-grayish-cyan); */
+  /* width: 90px; */
+  border: 1px solid var(--Light-grayish-cyan);
+  border-radius: 4px;
+}
+
+/* radio */
+input[type="radio"] {
+  display: none;
+
+}
+
+.tip-select-wrapper label {
+  background-color: var(--Very-dark-cyan);
+  /* width: 90px; */
+  text-align: center;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: var(--Light-grayish-cyan);
+  font-size: 24px;
+  }
+  .tip-select-wrapper label:hover{
+    background-color: var(--Dark-grayish-cyan);
+  }
+
+input[type="radio"]:checked + label {
+  background-color: var(--primary);
+  color: var(--Very-dark-cyan);
+  padding: 10px;
+}
+input[type="radio"]:checked + #tip-custom{
+  background-color: var(--primary);
+}
+.form-display .tip-select-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  width: 100%;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-display .header {
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.form-display .lebel-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.form-display .lebel-wrapper .error {
+  color: rgb(175, 4, 4);
+  display: none;
+}
+ .hidden{
+  display: hidden;
+ }
+
+.form-display .wrapper {
+  position: relative;
+}
+.form-display .wrapper .icon {
+  position: absolute;
+  top: 25%;
+  left: 8px;
+}
+
+#restAll:disabled{
+background-color: var(--Dark-grayish-cyan)
+}
